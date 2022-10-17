@@ -8,8 +8,8 @@ import { useGetContactsQuery, useAddContactMutation } from 'redux/contactsApi';
 function ContactForm() {
   const { data: contacts } = useGetContactsQuery();
   const [addContact] = useAddContactMutation();
-  const [formInput, setFormInput] = useState({ name: '', phone: '' });
-  const { name, phone } = formInput;
+  const [formInput, setFormInput] = useState({ name: '', numbere: '' });
+  const { name, number } = formInput;
 
   const handleNameInput = event => {
     const { name, value } = event.currentTarget;
@@ -20,14 +20,14 @@ function ContactForm() {
     e.preventDefault();
     const contactItem = {
       name,
-      phone,
+      number,
     };
     console.log(contactItem);
 
     contacts.some(contact => contact.name?.toLowerCase() === name.toLowerCase())
       ? alert(`${name} is already exist in contacts`)
       : await addContact(contactItem);
-    setFormInput({ name: '', phone: '' });
+    setFormInput({ name: '', number: '' });
   };
 
   return (
@@ -50,12 +50,12 @@ function ContactForm() {
         <Input
           placeholder="+XX XXX XXX XX XX"
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           onChange={handleNameInput}
-          value={phone}
+          value={number}
         />
       </Label>
       <AddContactBtn type="submit">Add contact</AddContactBtn>
