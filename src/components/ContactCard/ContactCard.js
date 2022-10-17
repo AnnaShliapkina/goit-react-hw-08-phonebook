@@ -1,11 +1,11 @@
 // import PropTypes from 'prop-types';
 import { ContactCards, Name, Number, DeleteBtn } from './ContactCard.styled';
 
-export const ContactCard = ({ name, phone, id, onDeleteButton }) => {
+export const ContactCard = ({ name, number, id, onDeleteButton }) => {
   return (
     <ContactCards>
       <Name>{name}</Name>
-      <Number>{phone}</Number>
+      <Number>{number}</Number>
       <DeleteBtn type="button" id={id} onClick={onDeleteButton}>
         Delete
       </DeleteBtn>

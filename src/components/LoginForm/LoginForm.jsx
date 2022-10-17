@@ -106,7 +106,7 @@ export default function LoginForm() {
             <Grid container>
               <Grid item>
                 <Link component={RouterLink} to="/register" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {'Do you wanna a new account? Sign Up'}
                 </Link>
               </Grid>
             </Grid>

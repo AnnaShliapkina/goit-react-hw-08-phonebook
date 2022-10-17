@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useLogoutUserMutation } from 'redux/authApi';
 
-export default function Logout() {
+export default function NavLogout() {
   const navigate = useNavigate();
   const [logout, isSuccess] = useLogoutUserMutation();
 
@@ -20,10 +20,11 @@ export default function Logout() {
       sx={{
         mx: 1,
         my: 2,
-        color: 'wyellow',
+        color: 'red',
+        borderColor: 'white',
         display: 'block',
-        border: 2,
-        borderRadius: '10px',
+        border: 1,
+        borderRadius: '8px',
       }}
     >
       Logout

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { getIsLoggedIn, getUserName } from 'redux/authSlice';
 import Login from 'components/Login/Login';
 import Signup from 'components/NavigationSignup/NavigationSignup';
-import Logout from 'components/Logout/Logout';
+import NavLogout from 'components/Logout/Logout';
 
 export default function Navigation() {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -31,7 +31,7 @@ export default function Navigation() {
             {isLoggedIn && (
               <>
                 <h3>{userName}</h3>
-                <Logout />
+                <NavLogout />
               </>
             )}
           </Box>
